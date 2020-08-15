@@ -193,7 +193,7 @@ footer {
 
 .select-dropdown::-ms-expand,
 .select-status::-ms-expand {
-  display: none;
+ display: none;
 }
 
 .select-dropdown:hover,
