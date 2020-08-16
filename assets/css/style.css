@@ -155,8 +155,7 @@ footer {
   top: 0;
 }
 
-.edit-btn,
-.delete-btn {
+.edit-btn, .delete-btn {
   font-size: 1.4rem;
   padding: 5px 7px;
   margin: 3px;
