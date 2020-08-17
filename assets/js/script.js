@@ -55,6 +55,8 @@ var completeEditTask = function (taskName, taskType, taskId) {
             tasks[i].type = taskType;
         }
     };
+
+    saveTasks() 
     alert("Task Updated!");
 
     formEl.removeAttribute("data-task-id");
@@ -88,8 +90,10 @@ var createTaskEl = function (taskDataObj) {
     //increase task counter for next unique id
     taskIdCounter++;
 
-    console.log(taskDataObj);
-    console.log(taskDataObj.status);
+    saveTasks() 
+
+    //console.log(taskDataObj);
+    //console.log(taskDataObj.status);
 
 };
 
@@ -187,7 +191,7 @@ var deleteTask = function (taskId) {
 
     // reassign tasks array to be the same as updatedTaskArr
     tasks = updatedTaskArr;
-
+    saveTasks() 
 };
 
 var taskStatusChangeHandler = function (event) {
@@ -212,7 +216,8 @@ var taskStatusChangeHandler = function (event) {
             tasks[i].status = statusValue;
         }
     }
-    console.log(tasks);
+    saveTasks() 
+    //console.log(tasks);
 };
 
 var dragTaskHandler = function (event) {
@@ -254,6 +259,7 @@ var dropTaskHandler = function (event) {
         if (tasks[i].id === parseInt(id)) {
             tasks[i].status = statusSelectEl.value.toLowerCase();
         }
+        saveTasks() 
     }
 
     console.log(tasks);
@@ -274,6 +280,10 @@ var dragLeaveHandler = function (event) {
     }
     //console.dir(event.target);
 };
+
+var saveTasks = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
 
 pageContentEl.addEventListener("dragstart", dragTaskHandler);
 pageContentEl.addEventListener("dragover", dropZoneDragHandler);
