@@ -83,6 +83,7 @@ var createTaskEl = function (taskDataObj) {
     listItemEl.appendChild(taskActionEl);
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
+        //add if/else statement to fix
 
     taskDataObj.id = taskIdCounter;
     tasks.push(taskDataObj);
@@ -261,7 +262,7 @@ var dropTaskHandler = function (event) {
         }
         saveTasks()
     }
-
+    //saveTasks()
     console.log(tasks);
 
     //console.dir(statusSelectEl);
@@ -278,6 +279,7 @@ var dragLeaveHandler = function (event) {
     if (taskListEl) {
         taskListEl.removeAttribute("style");
     }
+    saveTasks()
     //console.dir(event.target);
 };
 
